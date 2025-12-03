@@ -13,6 +13,10 @@
 
 **Про проєкт:**  
 TEEN BUDGET — це не просто додаток. Це маленький стильний інструмент для самостійного навчання та розвитку. Він показує, що фінанси — це не страшно, а цікаво. І навіть найменші кроки до власної “баночки-скарбнички” формують навички, які залишаються назавжди.  
+<img width="435" height="905" alt="Знімок екрана 2025-12-04 о 00 33 57" src="https://github.com/user-attachments/assets/215e863f-98bb-480e-aa8d-d2f2d1788c59" />
+<img width="435" height="905" alt="Знімок екрана 2025-12-04 о 00 34 11" src="https://github.com/user-attachments/assets/a46c5931-2ece-4e46-8859-b0d0df930798" />
+<img width="435" height="905" alt="Знімок екрана 2025-12-04 о 00 34 21" src="https://github.com/user-attachments/assets/a81976f2-e96f-456e-b33f-86110ac7fb2c" />
+<img width="435" height="905" alt="Знімок екрана 2025-12-04 о 00 34 32" src="https://github.com/user-attachments/assets/25b0b5ff-24cf-4b36-b6cd-cbb3a19b420d" />
 
 ---
 
