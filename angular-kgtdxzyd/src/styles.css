@@ -1,0 +1,199 @@
+/* ========================================================
+   TAILWIND + RESET + ПОВНЕ ПРИБИРАННЯ СКРОЛБАРА
+======================================================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Прибираємо скролбар назавжди (але скрол залишається) */
+::-webkit-scrollbar { display: none; }
+* { -ms-overflow-style: none; scrollbar-width: none; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ========================================================
+   ТОЧНИЙ ГРАДІЄНТ З РЕФЕРЕНСУ (Teen Budget) — теплий і преміальний
+======================================================== */
+body {
+  background: linear-gradient(135deg,
+    #FFF3E0 0%,
+    #FFE0B2 15%,
+    #FFCCBC 40%,
+    #FFB74D 70%,
+    #FF8A65 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* М’який світлий оверлей — додає глибини, як у референсі */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.4), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ========================================================
+   ГОЛОВНИЙ КОНТЕЙНЕР ДАШБОРДУ
+======================================================== */
+.dashboard-container {
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  color: #000;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Заголовки */
+.title {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+  line-height: 1;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  opacity: 0.78;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================================
+   БАЛАНС + ЗНАЧНО ЗБІЛЬШЕНА БАНКА (як ти просив)
+======================================================== */
+/* Піднімаємо всю секцію баланс + банка вгору */
+.balance-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  margin: 1.5rem 0 6rem !important;   /* було 4rem 0 6rem → тепер майже під заголовком */
+  flex-wrap: wrap;
+}
+
+/* Додатково трохи піднімаємо саму банку (візуально "парить" вище) */
+.jar-image {
+  width: 220px;
+  height: 285px;
+  filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.25));
+  transform: translateY(-100px) !important;   /* Ось це і піднімає банку вгору! */
+}
+.balance-amount {
+  font-size: 5.2rem;
+  font-weight: 900;
+  letter-spacing: -0.07em;
+  line-height: 1;
+  color: #000;
+}
+
+
+
+/* ========================================================
+   TIP OF THE DAY
+======================================================== */
+.tip-section {
+  margin-bottom: 6rem;
+}
+
+.tip-label {
+  font-size: 1.05rem;
+  text-transform: lowercase;
+  opacity: 0.7;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.tip-text {
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.22;
+  max-width: 340px;
+  margin: 0 auto;
+  color: #000;
+}
+
+/* ========================================================
+   НИЖНЯ НАВІГАЦІЯ — скляна, з blur-ефектом
+======================================================== */
+.bottom-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 30px;
+  padding: 16px 32px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 40px);
+  max-width: 420px;
+  z-index: 1000;
+  pointer-events: all;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 11px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-item.active {
+  color: #000;
+  font-weight: 700;
+}
+
+.nav-item svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+}
+
+/* ========================================================
+   АДАПТИВНІСТЬ — ідеально на всіх екранах
+======================================================== */
+@media (max-width: 480px) {
+  .title { font-size: 2.4rem; }
+  .balance-amount { font-size: 4.6rem; letter-spacing: -0.06em; }
+  .jar-image { width: 190px; height: 255px; }
+  .balance-section { gap: 2.5rem; margin: 3rem 0 5rem; }
+  .tip-text { font-size: 1.65rem; }
+  .bottom-nav { padding: 14px 24px; width: calc(100% - 32px); }
+}
+
